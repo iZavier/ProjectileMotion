@@ -2,6 +2,31 @@
 Aim:
 To simulate (2D) the trajectories of an object projected at various angles,
 varying speeds, with and without air resistance and calculate range and
+maximum height achieved with user supplied values The goal is to develop
+a program that can be uses by teacher/student as a learning tool, which
+describe the motion of real-world objects, used in sports that involve
+throwing an object, e.g. football, cricket ball, tennis ball golf ball etc.
+"""
+
+"""
+Here we import Tk and Frame classes. The first class is used to create a root
+window. The latter is a container for other widgets.
+"""
+
+from tkinter import *
+import matplotlib, sys
+matplotlib.use('TkAgg')
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, \
+ NavigationToolbar2TkAgg
+from matplotlib.figure import Figure
+import easygui
+from math import *
+from sys import *
+
+class SplashScreen(Frame):
+    def __init__( self,parent ):
+        Frame.__init__(self, parent)
+        self.pack(fill=BOTH, expand=1)
         self.parent = parent
         self.master.title("Introduction")
         canvas = Canvas(self, background="lightblue")
